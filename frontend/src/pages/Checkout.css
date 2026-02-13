@@ -1,0 +1,96 @@
+.checkout-page{
+  padding:40px 20px;
+  background:#f7fbff;
+  min-height:100vh;
+}
+
+.checkout-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:24px;
+  margin-top:20px;
+}
+
+/* CARD */
+.checkout-card{
+  background:white;
+  padding:24px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* FORM */
+.form-grid{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:14px;
+}
+
+.form-grid input,
+.form-grid textarea{
+  border:none;
+  background:#f2f6ff;
+  border-radius:12px;
+  padding:14px;
+  font-size:14px;
+}
+
+.form-grid textarea{
+  height:120px;
+  resize:none;
+}
+
+/* ITEM */
+.checkout-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:14px;
+}
+
+.checkout-item img{
+  height:50px;
+}
+
+/* TOTAL */
+.checkout-total{
+  display:flex;
+  justify-content:space-between;
+  margin-top:14px;
+}
+
+/* BUTTON */
+.place-btn{
+  width:100%;
+  margin-top:16px;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#0F6CBD,#0A4E8A);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* ================= TABLET ================= */
+@media(max-width:900px){
+  .checkout-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:500px){
+
+  .checkout-page{
+    padding:20px 14px;
+  }
+
+  .checkout-item{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+}

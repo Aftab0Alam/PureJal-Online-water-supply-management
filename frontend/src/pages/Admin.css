@@ -1,0 +1,129 @@
+.admin{
+  padding:40px;
+  background:#f7fbff;
+  min-height:100vh;
+}
+
+/* HERO BAR */
+.admin-hero{
+  background:linear-gradient(135deg,#0F6CBD,#0A4E8A);
+  color:white;
+  padding:30px;
+  border-radius:20px;
+  margin-bottom:30px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.08);
+}
+
+.admin-hero h2{
+  margin:0;
+}
+
+.admin-hero p{
+  margin-top:6px;
+  opacity:.9;
+}
+
+/* CARD */
+.admin-card{
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(12px);
+  border-radius:20px;
+  padding:30px;
+  max-width:420px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* FORM */
+.admin-form{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.admin-form input{
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  background:#EAF4FF;
+  font-size:14px;
+  outline:none;
+}
+
+/* BUTTON */
+.admin-btn{
+  border:none;
+  padding:14px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#0F6CBD,#0A4E8A);
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+  transition:.3s;
+}
+
+.admin-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(15,108,189,0.25);
+}
+
+
+
+/* LIST */
+.admin-list{
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.admin-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:white;
+  padding:14px;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);
+}
+
+.admin-item img{
+  height:50px;
+  object-fit:contain;
+}
+
+.admin-actions{
+  display:flex;
+  gap:10px;
+}
+
+.admin-actions button{
+  border:none;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  background:#EAF4FF;
+  color:#0F6CBD;
+  font-weight:600;
+}
+/* logout  */
+.admin-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logout-btn{
+  border:none;
+  padding:10px 18px;
+  border-radius:12px;
+  background:#0F6CBD;
+  color:white;
+  font-weight:500;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.logout-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(15,108,189,0.25);
+}

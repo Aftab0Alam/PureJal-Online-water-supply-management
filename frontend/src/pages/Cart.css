@@ -1,0 +1,201 @@
+.cart-page{
+  padding:40px 20px;
+  background:#f7fbff;
+  min-height:100vh;
+  box-sizing:border-box;
+}
+
+/* ==========================
+   CART LIST
+========================== */
+
+.cart-list{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* ==========================
+   CART CARD
+========================== */
+
+.cart-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+
+  background:white;
+  padding:18px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  flex-wrap:wrap; /* 🔥 responsive */
+}
+
+.cart-card img{
+  height:70px;
+  object-fit:contain;
+}
+
+/* ==========================
+   INFO
+========================== */
+
+.cart-info{
+  flex:1;
+  min-width:160px;
+}
+
+/* ==========================
+   QTY
+========================== */
+
+.cart-qty{
+  display:flex;
+  gap:10px;
+  margin-top:8px;
+  align-items:center;
+}
+
+.cart-qty button{
+  width:30px;
+  height:30px;
+  border:none;
+  background:#EAF4FF;
+  border-radius:8px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.cart-qty button:hover{
+  background:#d6e9ff;
+}
+
+.cart-qty input{
+  width:50px;
+  text-align:center;
+  border:none;
+  background:#f2f6ff;
+  border-radius:8px;
+  height:30px;
+}
+
+/* ==========================
+   RIGHT SIDE
+========================== */
+
+.cart-right{
+  text-align:right;
+  min-width:90px;
+}
+
+.remove-btn{
+  border:none;
+  background:#ff4d4f;
+  color:white;
+  padding:6px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:6px;
+}
+
+/* ==========================
+   🔥 STICKY CHECKOUT BAR (FIXED)
+========================== */
+
+.cart-summary{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+
+  background:white;
+
+  padding:18px 20px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  box-shadow:0 -10px 30px rgba(0,0,0,0.1);
+
+  box-sizing:border-box; /* 🔥 OVERFLOW FIX */
+}
+
+/* ==========================
+   CHECKOUT BUTTON
+========================== */
+
+.checkout-btn{
+  border:none;
+  padding:12px 22px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#0F6CBD,#0A4E8A);
+  color:white;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:.2s;
+}
+
+.checkout-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 14px rgba(15,108,189,0.25);
+}
+
+/* ==========================
+   📱 TABLET RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+  .cart-summary{
+    flex-direction:column;
+    gap:10px;
+    align-items:flex-start;
+  }
+
+  .checkout-btn{
+    width:100%;
+  }
+
+  .cart-card{
+    align-items:flex-start;
+  }
+
+  .cart-right{
+    width:100%;
+    text-align:left;
+  }
+}
+
+/* ==========================
+   📱 MOBILE RESPONSIVE
+========================== */
+
+@media(max-width:600px){
+
+  .cart-page{
+    padding:20px 14px;
+  }
+
+  .cart-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .cart-info{
+    margin-left:0;
+  }
+
+  .cart-right{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .cart-qty{
+    gap:6px;
+  }
+
+}

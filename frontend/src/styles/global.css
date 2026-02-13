@@ -1,0 +1,334 @@
+body{
+  margin:0;
+  font-family:Inter,sans-serif;
+  background:#f7fbff;
+}
+
+.pro-login-wrapper{
+  display:flex;
+  min-height:100vh;
+}
+
+/* LEFT SIDE */
+.brand-side{
+  flex:1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 45%),
+    linear-gradient(140deg,#0F6CBD,#0A4E8A);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:60px 120px 60px 80px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* LIQUID BACKGROUND */
+.liquid-bg{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255,255,255,0.25), transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.18), transparent 70%);
+  animation:liquidMove 12s ease-in-out infinite alternate;
+  filter:blur(60px);
+  z-index:1;
+}
+
+@keyframes liquidMove{
+  0%{ transform:translateX(-2%) translateY(-2%) scale(1);}
+  50%{ transform:translateX(2%) translateY(2%) scale(1.05);}
+  100%{ transform:translateX(-2%) translateY(-2%) scale(1);}
+}
+
+/* AURA */
+.water-aura{
+  position:absolute;
+  width:520px;
+  height:520px;
+  background:radial-gradient(circle,rgba(255,255,255,0.18),transparent 70%);
+  border-radius:50%;
+  filter:blur(70px);
+  top:30%;
+  left:35%;
+  transform:translate(-50%,-50%);
+  z-index:2;
+}
+
+.water-aura-2{
+  position:absolute;
+  width:320px;
+  height:320px;
+  background:radial-gradient(circle,rgba(255,255,255,0.14),transparent 60%);
+  border-radius:50%;
+  bottom:-60px;
+  right:-60px;
+  filter:blur(80px);
+  z-index:2;
+}
+
+/* BRAND TEXT */
+.brand-content{
+  position:relative;
+  z-index:6;
+}
+
+.brand-content h1{
+  font-size:56px;
+  font-weight:700;
+  letter-spacing:2px;
+  margin:0;
+}
+
+.brand-content p{
+  margin-top:14px;
+  font-size:16px;
+  opacity:0.9;
+}
+
+/* RIGHT SIDE */
+.form-side{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#EAF4FF;
+}
+
+/* LOGIN CARD */
+.login-card{
+  width:100%;
+  max-width:380px;
+  background:#fff;
+  padding:36px;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  border:1px solid #f0f0f0;
+}
+
+.login-card input{
+  height:48px;
+  border-radius:14px;
+  border:1px solid #e5e7eb;
+  padding:0 16px;
+}
+
+.primary-btn{
+  height:50px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#0F6CBD,#0A4E8A);
+  color:white;
+  font-weight:600;
+}
+
+/* HERO BOTTLE */
+.hero-wrap{
+  position:absolute;
+  right:-120px;
+  bottom:-40px;
+  perspective:1200px;
+  z-index:3;
+}
+
+.hero-bottle{
+  height:130%;
+  max-height:820px;
+  object-fit:contain;
+  transition:transform 0.25s ease;
+  filter:drop-shadow(0 90px 140px rgba(0,0,0,0.45));
+}
+
+/* LIGHT STRIP */
+.light-strip{
+  position:absolute;
+  top:-20%;
+  left:-40%;
+  width:120px;
+  height:160%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);
+  transform:rotate(20deg);
+  filter:blur(20px);
+
+  z-index:4;
+}
+
+@keyframes lightMove{
+  0%{ left:-40%; opacity:0;}
+  20%{ opacity:1;}
+  80%{ opacity:1;}
+  100%{ left:120%; opacity:0;}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .hero-wrap{
+    display:none;
+  }
+
+  .pro-login-wrapper{
+    flex-direction:column;
+  }
+
+  .brand-side{
+    height:220px;
+    text-align:center;
+    padding:20px;
+  }
+
+  .brand-content h1{
+    font-size:34px;
+  }
+
+  .form-side{
+    padding:20px;
+  }
+
+  .login-card{
+    max-width:100%;
+    padding:28px;
+  }
+}
+
+
+/* ======================
+   LOGIN LOADING FX
+====================== */
+
+.primary-btn.loading{
+  pointer-events:none;
+  opacity:.8;
+}
+
+/* SPINNER */
+.loader{
+  width:20px;
+  height:20px;
+  border:3px solid rgba(255,255,255,0.4);
+  border-top:3px solid #fff;
+  border-radius:50%;
+  display:inline-block;
+  animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(360deg); }
+}
+
+
+
+.primary-btn{
+  position:relative;
+  overflow:hidden;
+}
+
+.primary-btn::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:0;
+  background:rgba(255,255,255,0.3);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  top:50%;
+  left:50%;
+  opacity:0;
+}
+
+.primary-btn:active::after{
+  width:200%;
+  height:200%;
+  opacity:1;
+  transition:.5s;
+}
+
+
+.login-card.shake{
+  animation:shake .4s ease;
+}
+
+@keyframes shake{
+  0%{transform:translateX(0);}
+  25%{transform:translateX(-6px);}
+  50%{transform:translateX(6px);}
+  75%{transform:translateX(-4px);}
+  100%{transform:translateX(0);}
+}
+
+/* ULTRA LIGHT SWEEP */
+.hero-wrap::after{
+  content:"";
+  position:absolute;
+  top:-20%;
+  left:-60%;
+  width:140px;
+  height:160%;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transform:rotate(20deg);
+  filter:blur(20px);
+  animation:lightSweep 6s linear infinite;
+}
+
+@keyframes lightSweep{
+  0%{ left:-60%; opacity:0;}
+  20%{ opacity:1;}
+  80%{ opacity:1;}
+  100%{ left:140%; opacity:0;}
+}
+.hero-bottle{
+  animation:
+    bottleFloat 8s ease-in-out infinite,
+    reflectionMove 12s linear infinite;
+}
+
+@keyframes reflectionMove{
+  0%{
+    filter:
+      drop-shadow(0 90px 140px rgba(0,0,0,0.45))
+      brightness(1.05);
+  }
+  50%{
+    filter:
+      drop-shadow(0 90px 140px rgba(0,0,0,0.45))
+      brightness(1.12);
+  }
+  100%{
+    filter:
+      drop-shadow(0 90px 140px rgba(0,0,0,0.45))
+      brightness(1.05);
+  }
+}
+.login-wave{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,#0F6CBD,#0A4E8A);
+  z-index:9999;
+  transform:scaleY(0);
+  transform-origin:bottom;
+  animation:waveIn .8s ease forwards;
+}
+
+@keyframes waveIn{
+  to{
+    transform:scaleY(1);
+  }
+}
+.auth-wrapper{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#f7fbff;
+  padding:20px;
+}
